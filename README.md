@@ -2,9 +2,8 @@
 __一个用于sese和其他功能的微信机器人__
 
 ## 色色
-1. RandomSetu()
-
-  使用了<api.lolicon.app>作为api调用
+1. RandomSetu() <br>
+使用了<https://api.lolicon.app>作为api调用
  
 __TODO:__
 - 发完图片自动删除
