@@ -2,8 +2,13 @@
 __一个用于sese和其他功能的微信机器人__
 
 ## 色色
-使用了api.lolicon.app
-__TODO: 发完图片自动删除__
+1. RandomSetu()
+  使用了<api.lolicon.app>作为api调用
+__TODO:__
+- 发完图片自动删除
+- 其他的sese方式
+
+
 
 ## 签到
 __TODO: 打算用json实现功能__
@@ -12,4 +17,4 @@ __TODO: 打算用json实现功能__
   "date": "2022xxxx"
   "xxx": "积分"
 }
-```json
+```
