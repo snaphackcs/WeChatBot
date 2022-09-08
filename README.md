@@ -1,7 +1,7 @@
 # WeChatBot
 __一个用于sese和其他功能的微信机器人__
 
-## 色色
+## Sese.py
 1. RandomSetu() <br>
 使用了<https://api.lolicon.app>作为api调用
  
