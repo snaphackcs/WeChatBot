@@ -3,10 +3,11 @@ __一个用于sese和其他功能的微信机器人__
 
 ## WechatBot
 __主程序__
-1. 调用Sese.py来Sese $\rightarrow$ 判断是否发setu，并在本地自动删除setu
+1. 调用Sese.py来Sese $\rightarrow$ 判断是否需要发setu
 
 __TODO:__
-- 内置其他函数
+1. - [x]在本地自动删除setu
+2. - []内置其他函数
 
 ## Sese.py
 1. RandomSetu() <br>
