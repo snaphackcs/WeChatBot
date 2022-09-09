@@ -1,16 +1,20 @@
 # WeChatBot
 __一个用于sese和其他功能的微信机器人__
 
+## WechatBot
+__主程序__
+1. 调用Sese.py来Sese $\rightarrow$ 判断是否发setu，并在本地自动删除setu
+
+__TODO:__
+- 内置其他函数
+
 ## Sese.py
 1. RandomSetu() <br>
 使用了<https://api.lolicon.app>作为api调用
- 
+
 __TODO:__
-- 发完图片自动删除
-- 其他的sese方式
-
-
-
+- 其他sese方式，__建议社友提一下意见__
+ 
 ## 签到
 __TODO:__
 - 打算用json实现功能, 例如: 
