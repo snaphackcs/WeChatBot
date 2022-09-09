@@ -1,8 +1,9 @@
 from json import load
-from os.path import exists,join
+from os.path import exists, join
 from requests import get
 from pprint import pprint
-from os import system, removedirs, mkdir, getcwd
+from os import mkdir, getcwd
+from json import dump
 
 
 # 爬虫函数
@@ -11,7 +12,17 @@ def RandomSetu():
     # 新建文件夹
     if not exists(r".\temp"):
         mkdir("temp")
-        # headers用于伪装成浏览器爬取图片
+    # 新建原始json
+    if not exists("config.json"):
+        default_json = {
+            "r18": 0,
+            "num": 1,
+            "uid": None,
+            "tag": []
+        }
+        with open("config.json", mode="w") as f:
+            dump(default_json, f, indent=4)
+    # headers用于伪装成浏览器爬取图片
     headers = {
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
                       'Chrome/104.0.0.0 '
@@ -54,5 +65,5 @@ def RandomSetu():
 
 # 主函数: 用于测试函数
 if __name__ == '__main__':
-    print(RandomSetu()[1])
-
+    RandomSetu()
+    
