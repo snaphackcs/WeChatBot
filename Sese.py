@@ -31,7 +31,6 @@ def RandomSetu():
     # 打开json文件
     with open(".\config.json", mode="r", encoding="utf-8") as f:
         post_data = load(f)
-    post_data["r18"] = 0
     # api网址
     api_url = 'https://api.lolicon.app/setu/v2'
     # 发送参数并请求色图信息
@@ -44,9 +43,6 @@ def RandomSetu():
     pprint(url_json)
     # 循环读取色图信息
     for info in url_json["data"]:
-        # 如果有R-18标签也ban掉
-        if "R-18" in info["tags"]:
-            continue
         # 色图网址
         img_url = info["urls"]["original"]
         # 爬取色图二进制内容
@@ -60,10 +56,9 @@ def RandomSetu():
             # 保存色图
             f.write(img_content)
         path_list.append(join(getcwd(), f"temp\\{img_pid}.{img_ext}").replace("\\", "/"))
-    return path_list, len(path_list) != int(post_data["num"])
+    return path_list
 
 
 # 主函数: 用于测试函数
 if __name__ == '__main__':
     RandomSetu()
-    
