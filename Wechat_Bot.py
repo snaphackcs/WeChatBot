@@ -7,7 +7,11 @@ import ntchat
 from Sese import RandomSetu
 from shutil import rmtree
 from time import sleep
+from os import system
+from re import sub, compile
 
+# 替换字符
+pattern = compile(r'[\/\\\"\<\>\|\_\%\;\']')
 # 创建微信
 wechat = ntchat.WeChat()
 # 打开pc微信, smart: 是否管理已经登录的微信
@@ -31,6 +35,7 @@ wechat.send_text(to_wxid="23278031443@chatroom", content="bot已启动，目前�
 # 用于发色图的函数
 def send_setu(wechat_instance: ntchat.WeChat, message):
     # 利用全局变量来读取两个计时器的值
+    global pattern
     global setu_time
     global xianzhe_time
     # 获取群中消息的信息
@@ -40,9 +45,11 @@ def send_setu(wechat_instance: ntchat.WeChat, message):
     # 获取消息是在哪一个群
     room_wxid = data["room_wxid"]
     # 判断是否在SnapHack群使用的色图指令
-    if room_wxid == "23278031443@chatroom" and msg.lower() == "/setu" and time() - setu_time >= 3:
+    if room_wxid == "23278031443@chatroom" and msg.split(" ")[0] == "/setu" and time() - setu_time >= 3:
         # 如果已经过了贤者时间
         if time() - setu_time >= 180:
+            msg = sub(pattern, "/", msg[5::])
+            system(f"python SetuConfig.py{msg}")
             # 将计时器更新到现在的时间
             setu_time = time()
             # 爬取色图同时获取色图信息
