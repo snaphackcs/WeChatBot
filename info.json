@@ -1,32 +1,32 @@
 {
-    "date": "20220913",
+    "date": "20220914",
     "wxid_f42f8bssyu9312": {
         "name": "\u5f20\u6cfd\u57df",
-        "score": 3,
+        "score": 4,
         "sign_or_not": true,
         "title": ""
     },
     "wxid_pdb55y5c8l5n12": {
         "name": "\u6797\u6587\u97ec",
         "score": 3,
-        "sign_or_not": true,
+        "sign_or_not": false,
         "title": "\u6253\u5b57\u8521\u53ea\u56e0"
     },
     "wxid_wpsqkjdurgn412": {
         "name": "\u5f20\u5bb8",
         "score": 3,
-        "sign_or_not": true,
+        "sign_or_not": false,
         "title": ""
     },
     "wxid_uexqs5kko70d12": {
         "name": "\u65b9\u6cfd\u660a",
-        "score": 3,
+        "score": 4,
         "sign_or_not": true,
         "title": ""
     },
     "wxid_70w1u71g296j12": {
         "name": "\u59da\u987a\u987a",
-        "score": 4,
+        "score": 5,
         "sign_or_not": true,
         "title": ""
     },
@@ -39,25 +39,25 @@
     "wxid_vhuqscg5tjnu22": {
         "name": "\u5468\u5b50\u52cb",
         "score": 4,
-        "sign_or_not": true,
+        "sign_or_not": false,
         "title": ""
     },
     "wxid_nhblj0kef8di22": {
         "name": "\u5218\u4e66\u5b87",
-        "score": 4,
+        "score": 5,
         "sign_or_not": true,
         "title": ""
     },
     "wxid_v21fgzvmpj6m22": {
         "name": "\u5b5f\u4e39\u777f",
-        "score": 4,
+        "score": 5,
         "sign_or_not": true,
         "title": ""
     },
     "wxid_isrgdrn92qcy12": {
         "name": "\u5415\u5f66\u4eea",
         "score": 3,
-        "sign_or_not": true,
+        "sign_or_not": false,
         "title": ""
     }
 }
