@@ -1,17 +1,18 @@
 import sys
 import time
+import ntchat
+
 from json import load
 from time import time
-import ntchat
-from SetuConfig import randomSetu, time_convert
 from shutil import rmtree
-from time import sleep
 from os import system
 from re import sub, compile
-from Sign import sign
 
-# 替换字符
-pattern = compile(r'[\/\\\"\<\>\|\_\%\;\']')
+from Sign import sign
+from Roll import roll
+from SetuConfig import randomSetu, time_convert
+
+
 # 创建微信
 wechat = ntchat.WeChat()
 # 打开pc微信, smart: 是否管理已经登录的微信
@@ -29,7 +30,7 @@ print(name_dict)
 
 
 # 提醒群友bot已经启动
-# wechat.send_text(to_wxid="23278031443@chatroom", content="bot已启动，目前支持发色图和签到哦 ᕕ( ᐛ )ᕗ")
+wechat.send_text(to_wxid="23278031443@chatroom", content="bot已启动，目前支持发色图和签到哦 ᕕ( ᐛ )ᕗ")
 
 @wechat.msg_register(ntchat.MT_RECV_TEXT_MSG)
 def bot(wechat_instance: ntchat.WeChat, message):
@@ -44,21 +45,27 @@ def bot(wechat_instance: ntchat.WeChat, message):
             wechat_instance.send_room_at_msg(to_wxid="23278031443@chatroom",
                                              content=sign(from_wxid), at_list=[from_wxid])
 
+        # 跑团
+        elif msg[:5] == "/roll":
+            wechat_instance.send_room_at_msg(to_wxid="23278031443@chatroom",
+                                             content=roll(from_wxid,msg), at_list=[from_wxid])
+
         # 瑟瑟
         elif msg[:5] == "/setu":
             if time() - setu_time >= 7200:
-                msg = sub(pattern, "/", msg[5:])
+                msg = sub(r'[\/\\\"\<\>\|\_\%\;\']', "/", msg[5:])
                 system(f"python SetuConfig.py{msg}")
                 setu_time = time()
                 data = randomSetu()
+                wechat_instance.send_text(to_wxid="23278031443@chatroom", content="啊哈哈哈！色图来喽！ᕕ( ᐛ )ᕗ")
                 for img in data:
                     print(img)
                     wechat_instance.send_image(to_wxid="23278031443@chatroom", file_path=img)
-                sleep(1)
+                time.sleep(1)
                 rmtree("temp")  #清除缓存
             else:
                 wechat_instance.send_text(to_wxid="23278031443@chatroom",
-                                          content=f"贤者时间还有{time_convert(7200 - time() + setu_time)}")
+                                          content=f"贤者时间还有{time_convert(7200 - time() + setu_time)}，先休息一下啦(｀Д´)")
 
 
 try:

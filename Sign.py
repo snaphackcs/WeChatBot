@@ -1,5 +1,6 @@
 from json import load,dump
 from datetime import datetime
+from BuildArchives import new_archive
 
 
 def sign(from_wxid):
@@ -20,16 +21,7 @@ def sign(from_wxid):
 
     # 建档
     if from_wxid not in origin.keys():
-        new_info_json = {from_wxid: {
-            "name": name_dict[from_wxid],
-            "score": 0,
-            "sign_or_not": True,
-            "title": ""
-        }}
-        origin.update(new_info_json)
-
-        new_info_json = {from_wxid: "*姓名未录入*"}  #TODO: 读取群昵称
-        name_dict.update(new_info_json)
+        new_archive(from_wxid)
 
     # 判断是否已签到并输出
     if not origin[from_wxid]["sign_or_not"]:
