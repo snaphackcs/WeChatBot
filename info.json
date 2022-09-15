@@ -1,63 +1,101 @@
 {
-    "date": "20220914",
+    "date": "20220915",
     "wxid_f42f8bssyu9312": {
         "name": "\u5f20\u6cfd\u57df",
-        "score": 4,
+        "score": 50,
         "sign_or_not": true,
-        "title": ""
+        "title": "\u7c89\u7ea2KU\u5305",
+        "sign_days": 1
     },
     "wxid_pdb55y5c8l5n12": {
         "name": "\u6797\u6587\u97ec",
-        "score": 3,
-        "sign_or_not": false,
-        "title": "\u6253\u5b57\u8521\u53ea\u56e0"
+        "score": 50,
+        "sign_or_not": true,
+        "title": "\u6280\u6280\u56fd\u738b",
+        "sign_days": 1
     },
     "wxid_wpsqkjdurgn412": {
         "name": "\u5f20\u5bb8",
-        "score": 3,
-        "sign_or_not": false,
-        "title": ""
+        "score": 50,
+        "sign_or_not": true,
+        "title": "\u4e1c\u4eac\u70ed\u65b0\u5e02\u6c11",
+        "sign_days": 1
     },
     "wxid_uexqs5kko70d12": {
         "name": "\u65b9\u6cfd\u660a",
-        "score": 4,
+        "score": 50,
         "sign_or_not": true,
-        "title": ""
+        "title": "\u60f3\u770b\u793e\u957f\u81ea\u6485",
+        "sign_days": 1
     },
     "wxid_70w1u71g296j12": {
         "name": "\u59da\u987a\u987a",
-        "score": 5,
+        "score": 60,
         "sign_or_not": true,
-        "title": ""
+        "title": "\u7075\u5e7b\u7684\u72d7",
+        "sign_days": 1
     },
     "wxid_ssyd5nc3hbcp12": {
         "name": "\u989c\u6e0a",
-        "score": 3,
-        "sign_or_not": false,
-        "title": ""
+        "score": 50,
+        "sign_or_not": true,
+        "title": "\u9a6c\u54e5I\u4e0a\u8bfe",
+        "sign_days": 1
     },
     "wxid_vhuqscg5tjnu22": {
         "name": "\u5468\u5b50\u52cb",
-        "score": 4,
-        "sign_or_not": false,
-        "title": ""
+        "score": 60,
+        "sign_or_not": true,
+        "title": "\u767e\u4e07\u5927\u541b",
+        "sign_days": 1
     },
     "wxid_nhblj0kef8di22": {
         "name": "\u5218\u4e66\u5b87",
-        "score": 5,
+        "score": 60,
         "sign_or_not": true,
-        "title": ""
+        "title": "\u6211\u7684\u79f0\u53f7",
+        "sign_days": 1
     },
     "wxid_v21fgzvmpj6m22": {
         "name": "\u5b5f\u4e39\u777f",
-        "score": 5,
+        "score": 60,
         "sign_or_not": true,
-        "title": ""
+        "title": "\u5600\u690e\u6234\u4f26",
+        "sign_days": 1
     },
     "wxid_isrgdrn92qcy12": {
         "name": "\u5415\u5f66\u4eea",
-        "score": 3,
+        "score": 50,
+        "sign_or_not": true,
+        "title": "大本钟邮局",
+        "sign_days": 1
+    },
+    "wxid_2rxus9klb7z022": {
+        "name": "\u674e\u6600\u5112",
+        "score": 10,
+        "sign_or_not": true,
+        "title": "\u9f20\u9f20\u7279\u5de5",
+        "sign_days": 1
+    },
+    "wxid_8agqu7bmx4lm32": {
+        "name": "\u5b59\u9756\u9633",
+        "score": 20,
+        "sign_or_not": true,
+        "title": "\u4e00\u5929\u4e8c\u5341\u53d1",
+        "sign_days": 1
+    },
+    "wxid_1ha7pd9ukscs22": {
+        "name": "\u6234\u94f8\u94ed",
+        "score": 10,
+        "sign_or_not": true,
+        "title": "",
+        "sign_days": 1
+    },
+    "wxid_tbisukiee6s112": {
+        "name": "唐海博",
+        "score": 0,
         "sign_or_not": false,
-        "title": ""
+        "title": "永生的冰之茶",
+        "sign_days": 1
     }
 }
