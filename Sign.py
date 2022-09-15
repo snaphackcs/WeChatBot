@@ -13,9 +13,9 @@ def sign(from_wxid):
     if datetime.now().strftime("%Y%m%d") != origin["date"]:
         origin["date"] = datetime.now().strftime("%Y%m%d")
         for key in origin.keys():
-            if key == "date":
+            if key in ["date", "last_setu"]:
                 continue
-            if origin[key]["sign_or_not"]:
+            if origin[key]["sign_or_not"] and "sign_days" in origin[key].keys():
                 origin[key]["sign_days"] += 1
             else:
                 origin[key]["sign_days"] = 1
@@ -35,6 +35,7 @@ def sign(from_wxid):
     origin[from_wxid]["sign_or_not"] = True
     with open("info.json", mode="w") as f:
         dump(origin, f, indent=4)
+    print()
     return f"@{origin[from_wxid]['title']}{origin[from_wxid]['name']} 签到成功ᕕ( ᐛ )ᕗ，" \
            f"你已经连续签到{origin[from_wxid]['sign_days']}天啦！今日算力+={int(log10(origin[from_wxid]['sign_days']) * 10 + 5)}，" \
            f"总算力为{origin[from_wxid]['score']}点~"
