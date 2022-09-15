@@ -46,16 +46,19 @@ def bot(wechat_instance: ntchat.WeChat, message):
         from_wxid = data["from_wxid"]
         # 签到
         if msg == "/sign":
+            print(sign(from_wxid))
             wechat_instance.send_room_at_msg(to_wxid="23278031443@chatroom",
                                              content=sign(from_wxid), at_list=[from_wxid])
 
         # 跑团
         elif msg[:5] == "/roll":
-            msg = sub(r'[\/\\\"\<\>\|\_\%\;\']', "/", msg[5:])
-            system(f"python Roll.py {msg}")
-            with open("temp.txt", mode="w") as doc:
+            msg = sub(r'[\/\\\"\<\>\|\_\%\;\']', "/", msg)
+            print(f"python Command.py {msg}")
+            system(f"python Command.py {msg}")
+            with open("temp.json", mode="r", encoding="utf-8") as doc:
                 wechat_instance.send_room_at_msg(to_wxid="23278031443@chatroom",
-                                                 content=f"@{name_dict['from_wxid']}{doc.read()}ᕕ( ᐛ )ᕗ", at_list=[from_wxid])
+                                                 content=f"@{name_dict[from_wxid]} {load(doc)['text']} ᕕ( ᐛ )ᕗ",
+                                                 at_list=[from_wxid])
 
         # 瑟瑟
         elif msg[:5] == "/setu":
