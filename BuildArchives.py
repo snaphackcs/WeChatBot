@@ -21,7 +21,8 @@ def new_archive(from_wxid):
                 "name": name_dict[from_wxid],
                 "score": 0,
                 "sign_or_not": False,
-                "title": ""
+                "title": "",
+                "sign_days": 1
             }}
             origin.update(new_info_json)
             with open("info.json", mode="w") as f:

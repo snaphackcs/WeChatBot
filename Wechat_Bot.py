@@ -27,10 +27,10 @@ xianzhe_time = 0
 with open("name_dict.json", mode="r", encoding="utf-8") as f:
     name_dict = load(f)
 print(name_dict)
-
+print(wechat.get_contacts())
 
 # 提醒群友bot已经启动
-wechat.send_text(to_wxid="23278031443@chatroom", content="bot已启动，目前支持发色图和签到哦 ᕕ( ᐛ )ᕗ")
+wechat.send_text(to_wxid="23278031443@chatroom", content="bot已启动，已更新称号！ ᕕ( ᐛ )ᕗ")
 
 @wechat.msg_register(ntchat.MT_RECV_TEXT_MSG)
 def bot(wechat_instance: ntchat.WeChat, message):
@@ -54,7 +54,7 @@ def bot(wechat_instance: ntchat.WeChat, message):
         elif msg[:5] == "/setu":
             if time() - setu_time >= 7200:
                 msg = sub(r'[\/\\\"\<\>\|\_\%\;\']', "/", msg[5:])
-                system(f"python SetuConfig.py{msg}")
+                system(f"python Command.py{msg}")
                 setu_time = time()
                 data = randomSetu()
                 wechat_instance.send_text(to_wxid="23278031443@chatroom", content="啊哈哈哈！色图来喽！ᕕ( ᐛ )ᕗ")

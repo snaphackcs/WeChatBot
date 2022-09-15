@@ -1,12 +1,10 @@
 from json import load, dump
 from datetime import datetime
 from BuildArchives import new_archive
+from math import log10
 
 
 def sign(from_wxid):
-    # 读取人名列表
-    with open("name_dict.json", mode="r", encoding="utf-8") as f:
-        name_dict = load(f)
     # 读取账户列表
     with open("info.json", mode="r", encoding="utf-8") as f:
         origin = load(f)
@@ -17,6 +15,10 @@ def sign(from_wxid):
         for key in origin.keys():
             if key == "date":
                 continue
+            if origin[key]["sign_or_not"]:
+                origin[key]["sign_days"] += 1
+            else:
+                origin[key]["sign_days"] = 1
             origin[key]["sign_or_not"] = False
 
     # 建档
@@ -24,15 +26,18 @@ def sign(from_wxid):
         new_archive(from_wxid)
         with open("info.json", mode="r", encoding="utf-8") as f:
             origin = load(f)
-            
+
     # 判断是否已签到并输出
     if origin[from_wxid]["sign_or_not"]:
-        return f"@{origin[from_wxid]['title']}{origin[from_wxid]['name']} 你已经签过了(｀Д´), 算力为{origin[from_wxid]['score']}点"
-    origin[from_wxid]["score"] += 1
+        return f"@{origin[from_wxid]['title']}{origin[from_wxid]['name']} 你已经签过了(｀Д´)，算力为{origin[from_wxid]['score']}点"
+
+    origin[from_wxid]["score"] += int(log10(origin[from_wxid]["sign_days"]) * 10 + 5)
     origin[from_wxid]["sign_or_not"] = True
     with open("info.json", mode="w") as f:
         dump(origin, f, indent=4)
-    return f"@{origin[from_wxid]['title']}{origin[from_wxid]['name']} 签到成功ᕕ( ᐛ )ᕗ, 算力++, 为{origin[from_wxid]['score']}点"
+    return f"@{origin[from_wxid]['title']}{origin[from_wxid]['name']} 签到成功ᕕ( ᐛ )ᕗ，" \
+           f"你已经连续签到{origin[from_wxid]['sign_days']}天啦！今日算力+={int(log10(origin[from_wxid]['sign_days']) * 10 + 5)}，" \
+           f"总算力为{origin[from_wxid]['score']}点~"
 
 
 if __name__ == '__main__':

@@ -17,4 +17,6 @@ def roll(from_wxid, msg):
     dice = eval(msg[5::])
     return f"@{origin[from_wxid]['title']}{origin[from_wxid]['name']} 投了一个d{dice}，结果是{random.randint(1, dice)}ᕕ( ᐛ )ᕗ"
 
-print(roll("wxid_pdb55y5c8l5n12","/roll6"))
+
+if __name__ == '__main__':
+    print(roll("wxid_pdb55y5c8l5n12","/roll6"))
