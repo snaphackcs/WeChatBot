@@ -1,5 +1,6 @@
 {
     "date": "20220915",
+    "last_setu": 1663248701.7251387,
     "wxid_f42f8bssyu9312": {
         "name": "\u5f20\u6cfd\u57df",
         "score": 50,
@@ -67,12 +68,12 @@
         "name": "\u5415\u5f66\u4eea",
         "score": 50,
         "sign_or_not": true,
-        "title": "大本钟邮局",
+        "title": "\u5927\u672c\u949f\u90ae\u5c40",
         "sign_days": 1
     },
     "wxid_2rxus9klb7z022": {
         "name": "\u674e\u6600\u5112",
-        "score": 10,
+        "score": 15,
         "sign_or_not": true,
         "title": "\u9f20\u9f20\u7279\u5de5",
         "sign_days": 1
@@ -92,10 +93,17 @@
         "sign_days": 1
     },
     "wxid_tbisukiee6s112": {
-        "name": "唐海博",
+        "name": "\u5510\u6d77\u535a",
         "score": 0,
         "sign_or_not": false,
-        "title": "永生的冰之茶",
+        "title": "\u6c38\u751f\u7684\u51b0\u4e4b\u8336",
+        "sign_days": 1
+    },
+    "wxid_v8ezafor18oa22": {
+        "name": "\u9ec4\u8d1e\u598d",
+        "score": 5,
+        "sign_or_not": true,
+        "title": "",
         "sign_days": 1
     }
 }
