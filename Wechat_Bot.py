@@ -3,14 +3,17 @@ import time
 import ntchat
 from os.path import join
 from json import load, dump
-from time import time,localtime
+from time import time,localtime,sleep
 from shutil import rmtree
 from os import system,getcwd
 from re import sub
 
+
+from Fortuneslip import fortune,slip
 from Sign import sign
 from Setu import random_setu, time_convert
 from Fish import fish
+
 
 # 创建微信
 wechat = ntchat.WeChat()
@@ -50,9 +53,13 @@ def bot(wechat_instance: ntchat.WeChat, message):
             wechat_instance.send_room_at_msg(to_wxid="23278031443@chatroom",
                                              content=sign(from_wxid), at_list=[from_wxid])
         if msg == "/fortune":
-            wechat_instance.send_gif(to_wxid="23278031443@chatroom", file=r"./qian.gif")
+            if slip(from_wxid):
+                slippath=[]
+                slippath.append(join(getcwd(), "slip.gif").replace("\\", "/"))
+                wechat_instance.send_gif(to_wxid="23278031443@chatroom", file=slippath[0])
+            sleep(2)
             wechat_instance.send_room_at_msg(to_wxid="23278031443@chatroom",
-                                             content=sign(from_wxid), at_list=[from_wxid])
+                                             content=fortune(from_wxid), at_list=[from_wxid])
         if msg == "/test":
             timetu.append(join(getcwd(), f"{localtime()[3]}.gif").replace("\\", "/"))
             wechat.send_gif(to_wxid="23278031443@chatroom", file=timetu[0])
@@ -79,8 +86,7 @@ def bot(wechat_instance: ntchat.WeChat, message):
                 origin['last_setu'] = time()
                 with open("info.json", mode="w") as doc:
                     dump(origin, doc, indent=4)
-                time.sleep(1)
-                rmtree("temp")  # 清除缓存
+
 
             else:
                 wechat_instance.send_text(to_wxid="23278031443@chatroom",
@@ -99,7 +105,7 @@ if localtime()[4]==0 and localtime()[3] != timeno:
 
 try:
     while True:
-        pass
+        sleep(1)
 except KeyboardInterrupt:
     ntchat.exit_()
     sys.exit()

@@ -2,8 +2,16 @@ from json import load, dump
 from datetime import datetime
 from BuildArchives import new_archive
 import random
-from math import log10
-
+import ntchat
+from os import getcwd
+from os.path import join
+from time import sleep
+wechat = ntchat.WeChat()
+def slip(from_wxid):
+    with open("info.json", mode="r", encoding="utf-8") as f:
+        origin = load(f)
+    if origin[from_wxid]["fortune"] == 0:
+        return True
 
 
 def fortune(from_wxid):
