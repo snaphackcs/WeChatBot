@@ -46,7 +46,6 @@ def bot(wechat_instance: ntchat.WeChat, message):
         from_wxid = data["from_wxid"]
         # 签到
         if msg == "/sign":
-            print(sign(from_wxid))
             wechat_instance.send_room_at_msg(to_wxid="23278031443@chatroom",
                                              content=sign(from_wxid), at_list=[from_wxid])
 
