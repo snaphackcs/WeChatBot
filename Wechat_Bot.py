@@ -1,11 +1,11 @@
 import sys
 import time
 import ntchat
-
+from os.path import join
 from json import load, dump
-from time import time
+from time import time,localtime
 from shutil import rmtree
-from os import system
+from os import system,getcwd
 from re import sub
 
 from Sign import sign
@@ -30,15 +30,16 @@ with open("info.json", mode="r", encoding="utf-8") as f:
 
 # print(name_dict)
 # print(wechat.get_contacts())
-
+timetu = []
 # 提醒群友bot已经启动
-wechat.send_text(to_wxid="23278031443@chatroom", content="bot已启动，已更新钓鱼！ ᕕ( ᐛ )ᕗ")
+#wechat.send_text(to_wxid="23278031443@chatroom", content="bot已启动，已更新钓鱼！ ᕕ( ᐛ )ᕗ")
 
 
 @wechat.msg_register(ntchat.MT_RECV_TEXT_MSG)
 def bot(wechat_instance: ntchat.WeChat, message):
     global setu_time
     global name_dict
+    global timetu
     data = message["data"]
     msg = data["msg"]
     room_wxid = data["room_wxid"]
@@ -48,7 +49,9 @@ def bot(wechat_instance: ntchat.WeChat, message):
         if msg == "/sign":
             wechat_instance.send_room_at_msg(to_wxid="23278031443@chatroom",
                                              content=sign(from_wxid), at_list=[from_wxid])
-
+        if msg == "/test":
+            timetu.append(join(getcwd(), f"{localtime()[3]}.gif").replace("\\", "/"))
+            wechat.send_gif(to_wxid="23278031443@chatroom", file=timetu[0])
         # 跑团
         elif msg[:5] == "/roll":
             msg = sub(r'[\/\\\"\<\>\|\_\%\;\']', "/", msg)
@@ -68,7 +71,7 @@ def bot(wechat_instance: ntchat.WeChat, message):
                 wechat_instance.send_text(to_wxid="23278031443@chatroom", content="啊哈哈哈！色图来喽！ᕕ( ᐛ )ᕗ")
                 for img in data:
                     print(img)
-                    # wechat_instance.send_image(to_wxid="23278031443@chatroom", file_path=img)
+                    wechat_instance.send_image(to_wxid="23278031443@chatroom", file_path=img)
                 origin['last_setu'] = time()
                 with open("info.json", mode="w") as doc:
                     dump(origin, doc, indent=4)
@@ -83,7 +86,12 @@ def bot(wechat_instance: ntchat.WeChat, message):
         elif msg == "/fish":
             wechat_instance.send_room_at_msg(to_wxid="23278031443@chatroom",
                                              content=fish(from_wxid), at_list=[from_wxid])
-
+timetu = []
+timeno=25
+if localtime()[4]==0 and localtime()[3] != timeno:
+    timetu.append(join(getcwd(), f"{localtime()[3]}.gif").replace("\\", "/"))
+    wechat.send_gif(to_wxid="23278031443@chatroom", file=timetu[0])
+    timeno=localtime()[3]
 
 try:
     while True:
