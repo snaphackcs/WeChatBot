@@ -49,6 +49,10 @@ def bot(wechat_instance: ntchat.WeChat, message):
         if msg == "/sign":
             wechat_instance.send_room_at_msg(to_wxid="23278031443@chatroom",
                                              content=sign(from_wxid), at_list=[from_wxid])
+        if msg == "/fortune":
+            wechat_instance.send_gif(to_wxid="23278031443@chatroom", file=r"./qian.gif")
+            wechat_instance.send_room_at_msg(to_wxid="23278031443@chatroom",
+                                             content=sign(from_wxid), at_list=[from_wxid])
         if msg == "/test":
             timetu.append(join(getcwd(), f"{localtime()[3]}.gif").replace("\\", "/"))
             wechat.send_gif(to_wxid="23278031443@chatroom", file=timetu[0])

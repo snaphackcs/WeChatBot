@@ -21,6 +21,7 @@ def new_archive(from_wxid):
                 "name": name_dict[from_wxid],
                 "score": 0,
                 "sign_or_not": False,
+                "fortune":0,
                 "title": "",
                 "sign_days": 1
             }}
