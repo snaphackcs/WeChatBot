@@ -10,7 +10,7 @@ from re import sub
 
 from Sign import sign
 from Setu import random_setu, time_convert
-
+from Fish import fish
 
 # 创建微信
 wechat = ntchat.WeChat()
@@ -32,7 +32,7 @@ with open("info.json", mode="r", encoding="utf-8") as f:
 # print(wechat.get_contacts())
 
 # 提醒群友bot已经启动
-wechat.send_text(to_wxid="23278031443@chatroom", content="bot已启动，已更新称号！ ᕕ( ᐛ )ᕗ")
+wechat.send_text(to_wxid="23278031443@chatroom", content="bot已启动，已更新钓鱼！ ᕕ( ᐛ )ᕗ")
 
 
 @wechat.msg_register(ntchat.MT_RECV_TEXT_MSG)
@@ -79,6 +79,10 @@ def bot(wechat_instance: ntchat.WeChat, message):
                 wechat_instance.send_text(to_wxid="23278031443@chatroom",
                                           content=f"贤者时间还有{time_convert(7200 - time() + int(origin['last_setu']))}，"
                                                   f"先休息一下啦(｀Д´)")
+        #fish
+        elif msg == "/fish":
+            wechat_instance.send_room_at_msg(to_wxid="23278031443@chatroom",
+                                             content=fish(from_wxid), at_list=[from_wxid])
 
 
 try:
