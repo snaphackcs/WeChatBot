@@ -61,8 +61,8 @@ def bot(wechat_instance: ntchat.WeChat, message):
             wechat_instance.send_room_at_msg(to_wxid="23278031443@chatroom",
                                              content=fortune(from_wxid), at_list=[from_wxid])
         if msg == "/test":
-            timetu.append(join(getcwd(), f"{localtime()[3]}.gif").replace("\\", "/"))
-            wechat.send_gif(to_wxid="23278031443@chatroom", file=timetu[0])
+            timetu.append(join(getcwd(), f"time\\{localtime()[3]}.gif").replace("\\", "/"))
+            wechat.send_gif(to_wxid="23278031443@chatroom", file=timetu)
         # 跑团
         elif msg[:5] == "/roll":
             msg = sub(r'[\/\\\"\<\>\|\_\%\;\']', "/", msg)
@@ -98,9 +98,9 @@ def bot(wechat_instance: ntchat.WeChat, message):
                                              content=fish(from_wxid), at_list=[from_wxid])
 timetu = []
 timeno=25
-if localtime()[4]==0 and localtime()[3] != timeno:
-    timetu.append(join(getcwd(), f"{localtime()[3]}.gif").replace("\\", "/"))
-    wechat.send_gif(to_wxid="23278031443@chatroom", file=timetu[0])
+if localtime()[4]==00 and localtime()[3] != timeno:
+    timetu.append(join(getcwd(), f"time\\{localtime()[3]}.gif").replace("\\", "/"))
+    wechat.send_gif(to_wxid="23278031443@chatroom", file=timetu)
     timeno=localtime()[3]
 
 try:
