@@ -21,21 +21,15 @@ def sign(from_wxid):
                 origin[key]["sign_days"] = 1
             origin[key]["sign_or_not"] = False
 
-    # 建档
-    if from_wxid not in origin.keys():
-        new_archive(from_wxid)
-        with open("info.json", mode="r", encoding="utf-8") as f:
-            origin = load(f)
-
     # 判断是否已签到并输出
     if origin[from_wxid]["sign_or_not"]:
+        print(origin[from_wxid]["sign_or_not"])
         return f"@{origin[from_wxid]['title']}{origin[from_wxid]['name']} 你已经签过了(｀Д´)，算力为{origin[from_wxid]['score']}点"
 
     origin[from_wxid]["score"] += int(log10(origin[from_wxid]["sign_days"]) * 10 + 5)
     origin[from_wxid]["sign_or_not"] = True
     with open("info.json", mode="w") as f:
         dump(origin, f, indent=4)
-    print()
     return f"@{origin[from_wxid]['title']}{origin[from_wxid]['name']} 签到成功ᕕ( ᐛ )ᕗ，" \
            f"你已经连续签到{origin[from_wxid]['sign_days']}天啦！今日算力+={int(log10(origin[from_wxid]['sign_days']) * 10 + 5)}，" \
            f"总算力为{origin[from_wxid]['score']}点~"
