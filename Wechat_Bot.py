@@ -70,7 +70,7 @@ def bot(wechat_instance: ntchat.WeChat, message):
 
         # 跑团
         elif msg[:5] == "/roll":
-            msg = sub(r'[\/\\\"\<\>\|\_\%\;\']', "/", msg)
+            msg = sub(r'[\\\"\<\>\|\']', "/", msg)
             print(f"python Command.py {msg}")
             system(f"python Command.py {msg}")
             with open("temp.json", mode="r", encoding="utf-8") as doc:
