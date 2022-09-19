@@ -16,15 +16,14 @@ def new_archive(from_wxid):
             name_dict.update(new_info_json)
             with open("name_dict.json", mode="w") as f:
                 dump(name_dict, f, indent=4)
-        else:
-            new_info_json = {from_wxid: {
-                "name": name_dict[from_wxid],
-                "score": 0,
-                "sign_or_not": False,
-                "fortune":0,
-                "title": "",
-                "sign_days": 1
-            }}
-            origin.update(new_info_json)
-            with open("info.json", mode="w") as f:
-                dump(origin, f, indent=4)
+        new_info_json = {from_wxid: {
+            "name": name_dict[from_wxid],
+            "score": 0,
+            "sign_or_not": False,
+            "fortune":0,
+            "title": "",
+            "sign_days": 1
+        }}
+        origin.update(new_info_json)
+        with open("info.json", mode="w") as f:
+            dump(origin, f, indent=4)
