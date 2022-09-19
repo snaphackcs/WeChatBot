@@ -43,11 +43,19 @@ def bot(wechat_instance: ntchat.WeChat, message):
     global setu_time
     global name_dict
     global timetu
+    global origin
+    global name_dict
     data = message["data"]
     msg = data["msg"]
     room_wxid = data["room_wxid"]
     if room_wxid == "23278031443@chatroom":
         from_wxid = data["from_wxid"]
+        if from_wxid not in origin.keys():
+            new_archive(from_wxid)
+            with open("info.json", mode="r", encoding="utf-8") as f:
+                origin = load(f)
+            with open("name_dict.json", mode="r", encoding="utf-8") as f:
+                name_dict = load(f)
         # 签到
         if msg == "/sign":
             wechat_instance.send_room_at_msg(to_wxid="23278031443@chatroom",
