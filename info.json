@@ -1,6 +1,6 @@
 {
     "date": "20220919",
-    "last_setu": 1663558877.270417,
+    "last_setu": 1663502502.0575233,
     "wxid_f42f8bssyu9312": {
         "name": "\u5f20\u6cfd\u57df",
         "score": 58,
@@ -93,7 +93,7 @@
         "name": "\u5b59\u9756\u9633",
         "score": 20,
         "sign_or_not": false,
-        "fortune": false,
+        "fortune": 3,
         "title": "\u4e00\u5929\u4e8c\u5341\u53d1",
         "sign_days": 2
     },
@@ -122,15 +122,15 @@
         "sign_days": 2
     },
     "wxid_rmw0vyslcgq222": {
-        "name": "*\u59d3\u540d\u672a\u5f55\u5165*",
-        "score": 0,
-        "sign_or_not": false,
+        "name": "\u6843\u6cfd\u771f\u5e0c",
+        "score": 5,
+        "sign_or_not": true,
         "fortune": 0,
         "title": "",
         "sign_days": 1
     },
     "wxid_bum4oj5s040q12": {
-        "name": "*\u59d3\u540d\u672a\u5f55\u5165*",
+        "name": "\u6843\u6cfd\u771f\u5e0c",
         "score": 0,
         "sign_or_not": false,
         "fortune": 0,

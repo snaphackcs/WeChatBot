@@ -100,6 +100,11 @@ def bot(wechat_instance: ntchat.WeChat, message):
             wechat_instance.send_room_at_msg(to_wxid="23278031443@chatroom",
                                              content=fish(from_wxid), at_list=[from_wxid])
 
+        if msg == "/time":
+            timetu=[join(getcwd(), f"time\\{localtime()[3]}.gif").replace("\\", "/")]
+            #timetu.append(join(getcwd(), f"time\\{localtime()[3]}.gif").replace("\\", "/"))
+            wechat.send_gif(to_wxid="23278031443@chatroom", file=timetu[0])
+
 
 try:
     while True:
