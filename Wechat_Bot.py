@@ -3,17 +3,9 @@ import time
 import ntchat
 from os.path import join
 from json import load, dump
-
 from time import time, localtime, sleep
-from shutil import rmtree
 from os import system, getcwd
-
-from time import time, localtime, sleep
-
-from os import system, getcwd
-
 from re import sub
-
 from BuildArchives import new_archive
 from Fortuneslip import fortune, slip
 from Sign import sign
@@ -50,19 +42,23 @@ def bot(wechat_instance: ntchat.WeChat, message):
     data = message["data"]
     msg = data["msg"]
     room_wxid = data["room_wxid"]
-    # 判断是否已经建档
+
+    # 判断是否是SnapHack群消息
     if room_wxid == "23278031443@chatroom":
         from_wxid = data["from_wxid"]
+        # 判断是否已经建档
         if from_wxid not in origin.keys():
             new_archive(from_wxid)
             with open("info.json", mode="r", encoding="utf-8") as f:
                 origin = load(f)
             with open("name_dict.json", mode="r", encoding="utf-8") as f:
                 name_dict = load(f)
+
         # 签到
         if msg == "/sign":
             wechat_instance.send_room_at_msg(to_wxid="23278031443@chatroom",
                                              content=sign(from_wxid), at_list=[from_wxid])
+
         # 今日人品
         if msg == "/fortune":
             if slip(from_wxid):
