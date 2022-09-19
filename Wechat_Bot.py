@@ -4,7 +4,7 @@ import ntchat
 from os.path import join
 from json import load, dump
 from time import time,localtime,sleep
-from shutil import rmtree
+
 from os import system,getcwd
 from re import sub
 
@@ -104,12 +104,7 @@ def bot(wechat_instance: ntchat.WeChat, message):
         elif msg == "/fish":
             wechat_instance.send_room_at_msg(to_wxid="23278031443@chatroom",
                                              content=fish(from_wxid), at_list=[from_wxid])
-timetu = []
-timeno=25
-if localtime()[4]==00 and localtime()[3] != timeno:
-    timetu.append(join(getcwd(), f"time\\{localtime()[3]}.gif").replace("\\", "/"))
-    wechat.send_gif(to_wxid="23278031443@chatroom", file=timetu)
-    timeno=localtime()[3]
+
 
 try:
     while True:
