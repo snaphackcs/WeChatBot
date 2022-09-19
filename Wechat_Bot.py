@@ -11,7 +11,7 @@ from Fortuneslip import fortune, slip
 from Sign import sign
 from Setu import random_setu, time_convert
 from Fish import fish
-
+from meitu import erciyuan
 # 创建微信
 wechat = ntchat.WeChat()
 # 打开pc微信, smart: 是否管理已经登录的微信
@@ -77,6 +77,9 @@ def bot(wechat_instance: ntchat.WeChat, message):
                 wechat_instance.send_room_at_msg(to_wxid="23278031443@chatroom",
                                                  content=f"@{name_dict[from_wxid]} {load(doc)['text']} ᕕ( ᐛ )ᕗ",
                                                  at_list=[from_wxid])
+
+        if msg=="/二次元":
+            wechat_instance.send_image(to_wxid="23278031443@chatroom", file_path=erciyuan()[0])
 
         # 瑟瑟
         elif msg[:5] == "/setu":
