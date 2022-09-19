@@ -3,17 +3,22 @@ import time
 import ntchat
 from os.path import join
 from json import load, dump
-from time import time,localtime,sleep
 
-from os import system,getcwd
+from time import time, localtime, sleep
+from shutil import rmtree
+from os import system, getcwd
+
+from time import time, localtime, sleep
+
+from os import system, getcwd
+
 from re import sub
 
 from BuildArchives import new_archive
-from Fortuneslip import fortune,slip
+from Fortuneslip import fortune, slip
 from Sign import sign
 from Setu import random_setu, time_convert
 from Fish import fish
-
 
 # 创建微信
 wechat = ntchat.WeChat()
@@ -31,23 +36,21 @@ with open("name_dict.json", mode="r", encoding="utf-8") as f:
 with open("info.json", mode="r", encoding="utf-8") as f:
     origin = load(f)
 
-# print(name_dict)
-# print(wechat.get_contacts())
-timetu = []
+
 # 提醒群友bot已经启动
-#wechat.send_text(to_wxid="23278031443@chatroom", content="bot已启动，已更新钓鱼！ ᕕ( ᐛ )ᕗ")
+# wechat.send_text(to_wxid="23278031443@chatroom", content="bot已启动，已更新钓鱼！ ᕕ( ᐛ )ᕗ")
 
 
 @wechat.msg_register(ntchat.MT_RECV_TEXT_MSG)
 def bot(wechat_instance: ntchat.WeChat, message):
     global setu_time
     global name_dict
-    global timetu
     global origin
     global name_dict
     data = message["data"]
     msg = data["msg"]
     room_wxid = data["room_wxid"]
+    # 判断是否已经建档
     if room_wxid == "23278031443@chatroom":
         from_wxid = data["from_wxid"]
         if from_wxid not in origin.keys():
@@ -60,17 +63,15 @@ def bot(wechat_instance: ntchat.WeChat, message):
         if msg == "/sign":
             wechat_instance.send_room_at_msg(to_wxid="23278031443@chatroom",
                                              content=sign(from_wxid), at_list=[from_wxid])
+        # 今日人品
         if msg == "/fortune":
             if slip(from_wxid):
-                slippath=[]
-                slippath.append(join(getcwd(), "slip.gif").replace("\\", "/"))
+                slippath = [join(getcwd(), "slip.gif").replace("\\", "/")]
                 wechat_instance.send_gif(to_wxid="23278031443@chatroom", file=slippath[0])
             sleep(2)
             wechat_instance.send_room_at_msg(to_wxid="23278031443@chatroom",
                                              content=fortune(from_wxid), at_list=[from_wxid])
-        if msg == "/test":
-            timetu.append(join(getcwd(), f"time\\{localtime()[3]}.gif").replace("\\", "/"))
-            wechat.send_gif(to_wxid="23278031443@chatroom", file=timetu)
+
         # 跑团
         elif msg[:5] == "/roll":
             msg = sub(r'[\/\\\"\<\>\|\_\%\;\']', "/", msg)
@@ -94,13 +95,11 @@ def bot(wechat_instance: ntchat.WeChat, message):
                 origin['last_setu'] = time()
                 with open("info.json", mode="w") as doc:
                     dump(origin, doc, indent=4)
-
-
             else:
                 wechat_instance.send_text(to_wxid="23278031443@chatroom",
                                           content=f"贤者时间还有{time_convert(7200 - time() + int(origin['last_setu']))}，"
                                                   f"先休息一下啦(｀Д´)")
-        #fish
+        # 钓鱼
         elif msg == "/fish":
             wechat_instance.send_room_at_msg(to_wxid="23278031443@chatroom",
                                              content=fish(from_wxid), at_list=[from_wxid])
