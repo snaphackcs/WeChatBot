@@ -8,7 +8,7 @@ from shutil import rmtree
 from os import system,getcwd
 from re import sub
 
-
+from BuildArchives import new_archive
 from Fortuneslip import fortune,slip
 from Sign import sign
 from Setu import random_setu, time_convert
