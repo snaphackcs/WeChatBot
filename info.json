@@ -118,13 +118,21 @@
         "score": 5,
         "sign_or_not": false,
         "fortune": false,
-        "title": "\u6843\u6cfd\u771f\u5e0c",
+        "title": "\u6843\u6cfd\u771f\u5e0c\u9ec4\u8d1e\u598d",
         "sign_days": 1
     },
     "wxid_rmw0vyslcgq222": {
-        "name": "\u662f\u0062\u006f\u0074\u54d2",
-        "score": 0,
-        "sign_or_not": false,
+        "name": "\u662fbot\u54d2",
+        "score": 5,
+        "sign_or_not": true,
+        "fortune": 0,
+        "title": "",
+        "sign_days": 1
+    },
+    "wxid_bum4oj5s040q12": {
+        "name": "\u6843\u6cfd\u771f\u5e0c",
+        "score": 5,
+        "sign_or_not": true,
         "fortune": 0,
         "title": "",
         "sign_days": 1
