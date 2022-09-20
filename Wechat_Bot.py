@@ -12,6 +12,7 @@ from Sign import sign
 from Setu import random_setu, time_convert
 from Fish import fish
 from meitu import erciyuan
+import random
 # 创建微信
 wechat = ntchat.WeChat()
 # 打开pc微信, smart: 是否管理已经登录的微信
@@ -22,6 +23,7 @@ wechat.wait_login()
 setu_time = 0
 # 贤者时间语句计时器
 xianzhe_time = 0
+moyutime=0
 # 读取群友信息
 with open("name_dict.json", mode="r", encoding="utf-8") as f:
     name_dict = load(f)
@@ -39,6 +41,7 @@ def bot(wechat_instance: ntchat.WeChat, message):
     global name_dict
     global origin
     global name_dict
+    global moyutime
     data = message["data"]
     msg = data["msg"]
     room_wxid = data["room_wxid"]
@@ -79,7 +82,23 @@ def bot(wechat_instance: ntchat.WeChat, message):
                                                  at_list=[from_wxid])
 
         if msg=="/二次元":
-            wechat_instance.send_image(to_wxid="23278031443@chatroom", file_path=erciyuan()[0])
+            if moyutime > 3 and random.randint(0,1):
+                #wechat_instance.send_room_at_msg(to_wxid="23278031443@chatroom",
+                                                 #content=ma(from_wxid), at_list=[from_wxid])
+                wechat_instance.send_room_at_msg(to_wxid="23278031443@chatroom",
+                                                 content="崽啊，都已经几点了", at_list=[from_wxid])
+                wechat_instance.send_text(to_wxid="23278031443@chatroom", content="还在玩机器人")
+                wechat_instance.send_text(to_wxid="23278031443@chatroom", content="我该怎么说你好")
+                wechat_instance.send_text(to_wxid="23278031443@chatroom", content="再不爬起来写作业")
+                wechat_instance.send_text(to_wxid="23278031443@chatroom", content="妈给你一拳")
+                timetu = [join(getcwd(), f"time\\{localtime()[3]}.gif").replace("\\", "/")]
+                wechat.send_gif(to_wxid="23278031443@chatroom", file=timetu[0])
+                moyutime=0
+            else:
+                if time() - int(origin['last_setu']) <= 600:
+                    moyutime+=1
+                wechat_instance.send_image(to_wxid="23278031443@chatroom", file_path=erciyuan()[0])
+                print(moyutime)
 
         # 瑟瑟
         elif msg[:5] == "/setu":
