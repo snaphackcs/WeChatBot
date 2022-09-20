@@ -91,8 +91,8 @@ def bot(wechat_instance: ntchat.WeChat, message):
                 wechat_instance.send_text(to_wxid="23278031443@chatroom", content="我该怎么说你好")
                 wechat_instance.send_text(to_wxid="23278031443@chatroom", content="再不爬起来写作业")
                 wechat_instance.send_text(to_wxid="23278031443@chatroom", content="妈给你一拳")
-                timetu = [join(getcwd(), f"time\\{localtime()[3]}.gif").replace("\\", "/")]
-                wechat.send_gif(to_wxid="23278031443@chatroom", file=timetu[0])
+                yiquan = [join(getcwd(), f"q.jpg").replace("\\", "/")]
+                wechat.send_gif(to_wxid="23278031443@chatroom", file=yiquan[0])
                 moyutime=0
             else:
                 if time() - int(origin['last_setu']) <= 600:
