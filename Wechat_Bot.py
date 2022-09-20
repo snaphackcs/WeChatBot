@@ -83,6 +83,7 @@ def bot(wechat_instance: ntchat.WeChat, message):
 
         if msg=="/二次元":
             if moyutime > 3 and random.randint(0,1):
+                print(moyutime)
                 #wechat_instance.send_room_at_msg(to_wxid="23278031443@chatroom",
                                                  #content=ma(from_wxid), at_list=[from_wxid])
                 wechat_instance.send_room_at_msg(to_wxid="23278031443@chatroom",
@@ -94,6 +95,7 @@ def bot(wechat_instance: ntchat.WeChat, message):
                 yiquan = [join(getcwd(), f"q.jpg").replace("\\", "/")]
                 wechat.send_gif(to_wxid="23278031443@chatroom", file=yiquan[0])
                 moyutime=0
+                print(moyutime)
             else:
                 if time() - int(origin['last_setu']) <= 600:
                     moyutime+=1
