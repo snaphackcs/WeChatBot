@@ -12,6 +12,7 @@ from Sign import sign
 from Setu import random_setu, time_convert
 from Fish import fish
 from meitu import erciyuan
+from library.Joke import joke
 import random
 # 创建微信
 wechat = ntchat.WeChat()
@@ -132,6 +133,10 @@ def bot(wechat_instance: ntchat.WeChat, message):
         elif msg == "/fish":
             wechat_instance.send_room_at_msg(to_wxid="23278031443@chatroom",
                                              content=fish(from_wxid), at_list=[from_wxid])
+
+        # 地狱笑话
+        elif msg == "/joke":
+            wechat_instance.send_room_at_msg(to_wxid="23278031443@chatroom", content=joke(), at_list=[from_wxid])
 
         if msg == "/time":
             timetu=[join(getcwd(), f"time\\{localtime()[3]}.gif").replace("\\", "/")]
