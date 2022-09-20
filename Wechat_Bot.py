@@ -109,6 +109,7 @@ def bot(wechat_instance: ntchat.WeChat, message):
             wechat.send_gif(to_wxid="23278031443@chatroom", file=timetu[0])
 
 
+
 try:
     while True:
         sleep(1)
