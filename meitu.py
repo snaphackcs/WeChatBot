@@ -8,6 +8,8 @@ from json import dump
 
 # 爬虫函数
 def erciyuan():
+    print("enter")
+
     path_list = []
     # 新建文件夹
     if not exists(r".\temp"):
@@ -27,12 +29,13 @@ def erciyuan():
     # 发送参数并请求色图信息
     response = get(api_url, headers=headers)
     # 将色图信息转为字典
-    img_content = get(headers=headers, url=f"https:{response.text}").content
+    img_content = get(api_url, headers=headers).content
 
     with open(f"./temp/2.jpg", mode="wb") as f:
-            # 保存色图
         f.write(img_content)
+
     path_list.append(join(getcwd(), f"temp\\2.jpg").replace("\\", "/"))
+    print(path_list)
     return path_list
 
 
