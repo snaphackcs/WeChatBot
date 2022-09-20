@@ -23,7 +23,7 @@ def erciyuan():
     # 打开json文件
 
     # api网址
-    api_url = 'http://img.xjh.me/random_img.php?type=bg&return=url'
+    api_url = 'http://api.ooomn.com/api/ag?type=img'
     # 发送参数并请求色图信息
     response = get(api_url, headers=headers)
     # 将色图信息转为字典
