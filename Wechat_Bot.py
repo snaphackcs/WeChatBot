@@ -99,12 +99,11 @@ def bot(wechat_instance: ntchat.WeChat, message):
                 sleep(1)
                 wechat_instance.send_text(to_wxid="23278031443@chatroom", content="妈给你一拳")
                 yiquan = [join(getcwd(), f"q.jpg").replace("\\", "/")]
-                print(yiquan)
                 wechat_instance.send_image(to_wxid="23278031443@chatroom", file_path=yiquan[0])
                 moyutime=0
                 print(moyutime)
             else:
-                if (lastmoyu-time())<300:
+                if (time()-lastmoyu)<300:
                     moyutime+=1
                 else:
                     moyutime=0
