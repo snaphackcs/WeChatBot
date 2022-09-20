@@ -2,7 +2,6 @@ import argparse
 from json import dump
 from Roll import roll
 
-
 # 色图函数
 def setu_config(args):
     tag = []
