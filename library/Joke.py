@@ -9,7 +9,7 @@ def joke(from_wxid):
     with open("config/jokes.json", "r", encoding="utf-8") as fp:
         jokes = json.load(fp)
     jokes = jokes["jokes"]
-    idx = random.randint(0, len(jokes))
+    idx = random.randint(0, len(jokes)-1)
     return f"@{origin[from_wxid]['name']} [{origin[from_wxid]['title']}]\n{jokes[idx]}"
 
 if __name__ == "__main__":
