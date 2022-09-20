@@ -13,7 +13,7 @@
         "name": "\u6797\u6587\u97ec",
         "score": 87,
         "sign_or_not": true,
-        "fortune": 0,
+        "fortune": 6,
         "title": "\u6280\u6280\u56fd\u738b",
         "sign_days": 5
     },
@@ -37,7 +37,7 @@
         "name": "\u59da\u987a\u987a",
         "score": 68,
         "sign_or_not": false,
-        "fortune": 0,
+        "fortune": 3,
         "title": "\u7075\u5e7b\u7684\u72d7",
         "sign_days": 3
     },
@@ -45,7 +45,7 @@
         "name": "\u989c\u6e0a",
         "score": 58,
         "sign_or_not": true,
-        "fortune": 0,
+        "fortune": 3,
         "title": "\u6587\u5b57\u4f4d\u62db\u79df",
         "sign_days": 2
     },
@@ -53,7 +53,7 @@
         "name": "\u5468\u5b50\u52cb",
         "score": 68,
         "sign_or_not": true,
-        "fortune": 0,
+        "fortune": 4,
         "title": "\u767e\u4e07\u5927\u541b",
         "sign_days": 2
     },
@@ -75,8 +75,8 @@
     },
     "wxid_isrgdrn92qcy12": {
         "name": "\u5415\u5f66\u4eea",
-        "score": 50,
-        "sign_or_not": false,
+        "score": 58,
+        "sign_or_not": true,
         "fortune": 0,
         "title": "\u5927\u672c\u949f\u90ae\u5c40",
         "sign_days": 2
@@ -93,7 +93,7 @@
         "name": "\u5b59\u9756\u9633",
         "score": 28,
         "sign_or_not": true,
-        "fortune": 0,
+        "fortune": 3,
         "title": "\u4e00\u5929\u4e8c\u5341\u53d1",
         "sign_days": 2
     },
@@ -101,7 +101,7 @@
         "name": "\u6234\u94f8\u94ed",
         "score": 10,
         "sign_or_not": false,
-        "fortune": 0,
+        "fortune": 3,
         "title": "",
         "sign_days": 2
     },
@@ -117,7 +117,7 @@
         "name": "\u9ec4\u8d1e\u598d",
         "score": 13,
         "sign_or_not": true,
-        "fortune": 0,
+        "fortune": 4,
         "title": "",
         "sign_days": 2
     },
@@ -133,7 +133,7 @@
         "name": "\u6843\u6cfd\u771f\u5e0c",
         "score": 0,
         "sign_or_not": false,
-        "fortune": 0,
+        "fortune": 4,
         "title": "",
         "sign_days": 1
     },
