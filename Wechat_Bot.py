@@ -1,4 +1,4 @@
-import sys
+﻿import sys
 import time
 import ntchat
 from os.path import join
@@ -86,7 +86,7 @@ def bot(wechat_instance: ntchat.WeChat, message):
         elif msg[:5] == "/chag":
             msg = sub(r'[\\\"\<\>\|\']', "/", msg)
             with open("temp.json", mode="w") as doc:
-                dump({"exid": f"{from_wxid}"}, doc, indent=4)
+                dump({"wxid": f"{from_wxid}"}, doc, indent=4)
             print(f"python Command.py {msg}")
             system(f"python Command.py {msg}")
 
