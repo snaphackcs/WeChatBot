@@ -1,6 +1,7 @@
 import argparse
 from json import dump
 from Roll import roll
+from Change import chag
 
 # 色图函数
 def setu_config(args):
@@ -31,6 +32,13 @@ parser_roll = subparsers.add_parser("/roll")
 parser_roll.add_argument("-D", "--dice", type=int, default=6)
 parser_roll.add_argument("-N", "--num", type=int, default=1)
 parser_roll.set_defaults(func=roll)
+start = parser.parse_args()
+
+parser_roll = subparsers.add_parser("/chag")
+parser_roll.add_argument("-D", "--day", type=int, default=1)
+parser_roll.add_argument("-P", "--point", type=int, default=1)
+parser_roll.add_argument("-U", "--user", type=str, default="wxid_pdb55y5c8l5n12")
+parser_roll.set_defaults(func=chag)
 start = parser.parse_args()
 
 # 执行函数功能

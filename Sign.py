@@ -20,6 +20,7 @@ def sign(from_wxid):
             else:
                 origin[key]["sign_days"] = 1
             origin[key]["sign_or_not"] = False
+            origin[key]["fortune"] = 0
 
     # 判断是否已签到并输出
     if origin[from_wxid]["sign_or_not"]:

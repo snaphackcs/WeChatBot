@@ -83,6 +83,10 @@ def bot(wechat_instance: ntchat.WeChat, message):
                 wechat_instance.send_room_at_msg(to_wxid="23278031443@chatroom",
                                                  content=f"@{name_dict[from_wxid]} {load(doc)['text']} ᕕ( ᐛ )ᕗ",
                                                  at_list=[from_wxid])
+        elif msg[:5] == "/chag":
+            msg = sub(r'[\\\"\<\>\|\']', "/", msg)
+            print(f"python Command.py {msg} {from_wxid}")
+            system(f"python Command.py {msg} {from_wxid}")
 
         if msg=="/二次元":
             if moyutime>=3 and random.randint(0,1):
