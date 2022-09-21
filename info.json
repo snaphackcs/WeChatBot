@@ -1,6 +1,6 @@
 {
     "date": "20220921",
-    "last_setu": 1663666451.7658257,
+    "last_setu": 1663734773.4868276,
     "wxid_f42f8bssyu9312": {
         "name": "\u5f20\u6cfd\u57df",
         "score": 58,
@@ -13,9 +13,9 @@
         "name": "\u6797\u6587\u97ec",
         "score": 99,
         "sign_or_not": false,
-        "fortune": 4,
+        "fortune": 0,
         "title": "\u6280\u6280\u56fd\u738b",
-        "sign_days": 7
+        "sign_days": 1
     },
     "wxid_wpsqkjdurgn412": {
         "name": "\u5f20\u5bb8",
@@ -27,41 +27,41 @@
     },
     "wxid_uexqs5kko70d12": {
         "name": "\u65b9\u6cfd\u660a",
-        "score": 58,
+        "score": 63,
         "sign_or_not": false,
         "fortune": 0,
         "title": "\u60f3\u770b\u793e\u957f\u81ea\u6485",
-        "sign_days": 1
+        "sign_days": 2
     },
     "wxid_70w1u71g296j12": {
         "name": "\u59da\u987a\u987a",
         "score": 73,
-        "sign_or_not": true,
-        "fortune": 4,
+        "sign_or_not": false,
+        "fortune": 0,
         "title": "\u7075\u5e7b\u7684\u72d7",
-        "sign_days": 1
+        "sign_days": 2
     },
     "wxid_ssyd5nc3hbcp12": {
         "name": "\u989c\u6e0a",
-        "score": 78,
+        "score": 89,
         "sign_or_not": true,
-        "fortune": 0,
+        "fortune": 2,
         "title": "\u6587\u5b57\u4f4d\u62db\u79df",
-        "sign_days": 4
+        "sign_days": 5
     },
     "wxid_vhuqscg5tjnu22": {
         "name": "\u5468\u5b50\u52cb",
-        "score": 68,
+        "score": 73,
         "sign_or_not": false,
-        "fortune": 4,
+        "fortune": 0,
         "title": "\u767e\u4e07\u5927\u541b",
-        "sign_days": 1
+        "sign_days": 2
     },
     "wxid_nhblj0kef8di22": {
         "name": "\u5218\u4e66\u5b87",
         "score": 60,
         "sign_or_not": false,
-        "fortune": 3,
+        "fortune": 0,
         "title": "\u6211\u7684\u79f0\u53f7",
         "sign_days": 1
     },
@@ -76,18 +76,18 @@
     "wxid_isrgdrn92qcy12": {
         "name": "\u5415\u5f66\u4eea",
         "score": 55,
-        "sign_or_not": true,
+        "sign_or_not": false,
         "fortune": 0,
         "title": "\u5927\u672c\u949f\u90ae\u5c40",
-        "sign_days": 1
+        "sign_days": 2
     },
     "wxid_2rxus9klb7z022": {
         "name": "\u674e\u6600\u5112",
         "score": 20,
-        "sign_or_not": true,
+        "sign_or_not": false,
         "fortune": 0,
         "title": "\u9f20\u9f20\u7279\u5de5",
-        "sign_days": 1
+        "sign_days": 2
     },
     "wxid_8agqu7bmx4lm32": {
         "name": "\u5b59\u9756\u9633",
@@ -101,7 +101,7 @@
         "name": "\u6234\u94f8\u94ed",
         "score": 10,
         "sign_or_not": false,
-        "fortune": 3,
+        "fortune": 0,
         "title": "",
         "sign_days": 1
     },
@@ -111,15 +111,15 @@
         "sign_or_not": false,
         "title": "\u6c38\u751f\u7684\u51b0\u4e4b\u8336",
         "sign_days": 1,
-        "fortune": false
+        "fortune": 0
     },
     "wxid_v8ezafor18oa22": {
         "name": "\u9ec4\u8d1e\u598d",
         "score": 10,
-        "sign_or_not": true,
+        "sign_or_not": false,
         "fortune": 0,
         "title": "",
-        "sign_days": 1
+        "sign_days": 2
     },
     "wxid_rmw0vyslcgq222": {
         "name": "\u662fbot\u54d2",
@@ -127,22 +127,22 @@
         "sign_or_not": false,
         "fortune": 0,
         "title": "",
-        "sign_days": 2
+        "sign_days": 1
     },
     "wxid_bum4oj5s040q12": {
         "name": "\u6731\u71d5\u59ae",
         "score": 13,
-        "sign_or_not": true,
-        "fortune": 6,
+        "sign_or_not": false,
+        "fortune": 0,
         "title": "\u6843\u6cfd\u771f\u5e0c",
-        "sign_days": 2
+        "sign_days": 3
     },
     "wxid_2pmc5p4fe8od12": {
         "name": "\u674e\u6021\u6657",
         "score": 5,
-        "sign_or_not": true,
+        "sign_or_not": false,
         "fortune": 0,
         "title": "",
-        "sign_days": 1
+        "sign_days": 2
     }
 }

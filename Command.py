@@ -32,13 +32,12 @@ parser_roll = subparsers.add_parser("/roll")
 parser_roll.add_argument("-D", "--dice", type=int, default=6)
 parser_roll.add_argument("-N", "--num", type=int, default=1)
 parser_roll.set_defaults(func=roll)
-start = parser.parse_args()
 
-parser_roll = subparsers.add_parser("/chag")
-parser_roll.add_argument("-D", "--day", type=int, default=1)
-parser_roll.add_argument("-P", "--point", type=int, default=1)
-parser_roll.add_argument("-U", "--user", type=str, default="wxid_pdb55y5c8l5n12")
-parser_roll.set_defaults(func=chag)
+parser_chag = subparsers.add_parser("/chag")
+parser_chag.add_argument("-D", "--day", type=int, default=1)
+parser_chag.add_argument("-P", "--point", type=int, default=1)
+parser_chag.add_argument("-U", "--user", type=str, default="wxid_pdb55y5c8l5n12")
+parser_chag.set_defaults(func=chag)
 start = parser.parse_args()
 
 # 执行函数功能

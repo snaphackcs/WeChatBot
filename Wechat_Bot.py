@@ -138,6 +138,12 @@ def bot(wechat_instance: ntchat.WeChat, message):
             wechat_instance.send_room_at_msg(to_wxid="23278031443@chatroom",
                                              content=fish(from_wxid), at_list=[from_wxid])
 
+        elif msg == "/flip_coin":
+            if random.randint(0,1)==1:
+                wechat.send_gif(to_wxid="23278031443@chatroom", file=r"C:\WeChatBot\1.gif")
+            else:
+                wechat.send_gif(to_wxid="23278031443@chatroom", file=r"C:\WeChatBot\hua.gif")
+
         # 地狱笑话
         elif msg == "/joke":
             wechat_instance.send_room_at_msg(to_wxid="23278031443@chatroom", content=joke(from_wxid), at_list=[from_wxid])
