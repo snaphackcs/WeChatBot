@@ -85,8 +85,10 @@ def bot(wechat_instance: ntchat.WeChat, message):
                                                  at_list=[from_wxid])
         elif msg[:5] == "/chag":
             msg = sub(r'[\\\"\<\>\|\']', "/", msg)
-            print(f"python Command.py {msg} {from_wxid}")
-            system(f"python Command.py {msg} {from_wxid}")
+            with open("temp.json", mode="w") as doc:
+                dump({"exid": f"{from_wxid}"}, doc, indent=4)
+            print(f"python Command.py {msg}")
+            system(f"python Command.py {msg}")
 
         if msg=="/二次元":
             if moyutime>=3 and random.randint(0,1):
@@ -113,7 +115,7 @@ def bot(wechat_instance: ntchat.WeChat, message):
                 else:
                     moyutime=0
                 wechat_instance.send_image(to_wxid="23278031443@chatroom", file_path=erciyuan()[0])
-                moyutime=time()
+                lastmoyu=time()
                 print(moyutime)
 
         # 瑟瑟
