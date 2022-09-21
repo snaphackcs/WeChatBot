@@ -1,6 +1,6 @@
 {
     "date": "20220921",
-    "last_setu": 1663734773.4868276,
+    "last_setu": 1663742007.2698224,
     "wxid_f42f8bssyu9312": {
         "name": "\u5f20\u6cfd\u57df",
         "score": 58,
@@ -21,7 +21,7 @@
         "name": "\u5f20\u5bb8",
         "score": 76,
         "sign_or_not": false,
-        "fortune": 0,
+        "fortune": 4,
         "title": "\u4e1c\u4eac\u70ed\u65b0\u5e02\u6c11",
         "sign_days": 1
     },
@@ -35,8 +35,8 @@
     },
     "wxid_70w1u71g296j12": {
         "name": "\u59da\u987a\u987a",
-        "score": 73,
-        "sign_or_not": false,
+        "score": 81,
+        "sign_or_not": true,
         "fortune": 0,
         "title": "\u7075\u5e7b\u7684\u72d7",
         "sign_days": 2
