@@ -1,5 +1,5 @@
 {
-    "date": "20220920",
+    "date": "20220921",
     "last_setu": 1663666451.7658257,
     "wxid_f42f8bssyu9312": {
         "name": "\u5f20\u6cfd\u57df",
@@ -12,10 +12,10 @@
     "wxid_pdb55y5c8l5n12": {
         "name": "\u6797\u6587\u97ec",
         "score": 99,
-        "sign_or_not": true,
+        "sign_or_not": false,
         "fortune": 4,
         "title": "\u6280\u6280\u56fd\u738b",
-        "sign_days": 6
+        "sign_days": 7
     },
     "wxid_wpsqkjdurgn412": {
         "name": "\u5f20\u5bb8",
@@ -23,7 +23,7 @@
         "sign_or_not": false,
         "fortune": false,
         "title": "\u4e1c\u4eac\u70ed\u65b0\u5e02\u6c11",
-        "sign_days": 4
+        "sign_days": 1
     },
     "wxid_uexqs5kko70d12": {
         "name": "\u65b9\u6cfd\u660a",
@@ -31,7 +31,7 @@
         "sign_or_not": false,
         "fortune": false,
         "title": "\u60f3\u770b\u793e\u957f\u81ea\u6485",
-        "sign_days": 3
+        "sign_days": 1
     },
     "wxid_70w1u71g296j12": {
         "name": "\u59da\u987a\u987a",
@@ -44,10 +44,10 @@
     "wxid_ssyd5nc3hbcp12": {
         "name": "\u989c\u6e0a",
         "score": 67,
-        "sign_or_not": true,
+        "sign_or_not": false,
         "fortune": 0,
         "title": "\u6587\u5b57\u4f4d\u62db\u79df",
-        "sign_days": 3
+        "sign_days": 4
     },
     "wxid_vhuqscg5tjnu22": {
         "name": "\u5468\u5b50\u52cb",
@@ -55,7 +55,7 @@
         "sign_or_not": false,
         "fortune": 4,
         "title": "\u767e\u4e07\u5927\u541b",
-        "sign_days": 3
+        "sign_days": 1
     },
     "wxid_nhblj0kef8di22": {
         "name": "\u5218\u4e66\u5b87",
@@ -115,22 +115,30 @@
     },
     "wxid_v8ezafor18oa22": {
         "name": "\u9ec4\u8d1e\u598d",
-        "score": 5,
-        "sign_or_not": false,
+        "score": 10,
+        "sign_or_not": true,
         "fortune": false,
-        "title": "\u6843\u6cfd\u771f\u5e0c\u9ec4\u8d1e\u598d",
+        "title": "",
         "sign_days": 1
     },
     "wxid_rmw0vyslcgq222": {
         "name": "\u662fbot\u54d2",
         "score": 5,
-        "sign_or_not": true,
+        "sign_or_not": false,
         "fortune": 0,
         "title": "",
-        "sign_days": 1
+        "sign_days": 2
     },
     "wxid_bum4oj5s040q12": {
-        "name": "\u6843\u6cfd\u771f\u5e0c",
+        "name": "\u6731\u71d5\u59ae",
+        "score": 5,
+        "sign_or_not": false,
+        "fortune": 0,
+        "title": "\u6843\u6cfd\u771f\u5e0c",
+        "sign_days": 2
+    },
+    "wxid_2pmc5p4fe8od12": {
+        "name": "\u674e\u6021\u6657",
         "score": 5,
         "sign_or_not": true,
         "fortune": 0,
