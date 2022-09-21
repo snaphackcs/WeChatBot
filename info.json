@@ -1,6 +1,6 @@
 {
     "date": "20220921",
-    "last_setu": 1663742007.2698224,
+    "last_setu": 1663759185.7790504,
     "wxid_f42f8bssyu9312": {
         "name": "\u5f20\u6cfd\u57df",
         "score": 58,
@@ -144,5 +144,21 @@
         "fortune": 0,
         "title": "",
         "sign_days": 2
+    },
+    "kanghaotian": {
+        "name": "\u5eb7\u660a\u5929",
+        "score": 0,
+        "sign_or_not": false,
+        "fortune": 0,
+        "title": "",
+        "sign_days": 1
+    },
+    "wxid_ge3fejg2qx4q22": {
+        "name": "*\u59d3\u540d\u672a\u5f55\u5165*",
+        "score": 0,
+        "sign_or_not": false,
+        "fortune": 0,
+        "title": "",
+        "sign_days": 1
     }
 }
