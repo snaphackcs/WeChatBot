@@ -131,8 +131,8 @@ def bot(wechat_instance: ntchat.WeChat, message):
                                           content=f"贤者时间还有{time_convert(7200 - time() + int(origin['last_setu']))}，"
                                                   f"先休息一下啦(｀Д´)")
 
-        elif from_wxid=="wxid_ssyd5nc3hbcp12":
-            wechat_instance.send_text(to_wxid="23278031443@chatroom", content=msg)
+        elif from_wxid=="wxid_ssyd5nc3hbcp12" and msg[:1] == "/":
+                wechat_instance.send_text(to_wxid="23278031443@chatroom", content=msg)
 
 
 
