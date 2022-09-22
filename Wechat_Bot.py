@@ -96,6 +96,9 @@ def bot(wechat_instance: ntchat.WeChat, message):
         if msg=="/test":
             wechat_instance.send_video(to_wxid="23278031443@chatroom",file_path=r"C:\WeChatBot\test.mp3")
 
+        if msg=="/rick_roll":
+            wechat_instance.send_video(to_wxid="23278031443@chatroom", file_path=r"C:\WeChatBot\rickroll.mp4")
+
         # 跑团
         elif msg[:5] == "/roll":
             msg = sub(r'[\\\"\<\>\|\']', "/", msg)
