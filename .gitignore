@@ -130,3 +130,6 @@ dmypy.json
 .pyre/
 .idea
 temp.json
+
+# Edited by liusy12810
+scratch/*.py
