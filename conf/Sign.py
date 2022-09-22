@@ -1,12 +1,11 @@
 from json import load, dump
 from datetime import datetime
-from BuildArchives import new_archive
 from math import log10
 
 
 def sign(from_wxid):
     # 读取账户列表
-    with open("info.json", mode="r", encoding="utf-8") as f:
+    with open("config/info.json", mode="r", encoding="utf-8") as f:
         origin = load(f)
 
     # 更新现在的时间
@@ -29,12 +28,11 @@ def sign(from_wxid):
 
     origin[from_wxid]["score"] += int(log10(origin[from_wxid]["sign_days"]) * 10 + 5)
     origin[from_wxid]["sign_or_not"] = True
-    with open("info.json", mode="w") as f:
+    with open("config/info.json", mode="w") as f:
         dump(origin, f, indent=4)
     return f"@{origin[from_wxid]['title']}{origin[from_wxid]['name']} 签到成功ᕕ( ᐛ )ᕗ，" \
            f"你已经连续签到{origin[from_wxid]['sign_days']}天啦！今日算力+={int(log10(origin[from_wxid]['sign_days']) * 10 + 5)}，" \
            f"总算力为{origin[from_wxid]['score']}点~"
 
 
-if __name__ == '__main__':
-    print(sign("wxid_f42f8bssyu9312"))
+#sign("wxid_f42f8bssyu9312")

@@ -1,9 +1,7 @@
-from json import load
 from os.path import exists, join
 from requests import get
-from pprint import pprint
 from os import mkdir, getcwd
-from json import dump
+
 
 
 # 爬虫函数
@@ -26,10 +24,9 @@ def erciyuan():
 
     # api网址
     api_url = 'http://api.ooomn.com/api/ag?type=img'
-    # 发送参数并请求色图信息
-    response = get(api_url, headers=headers)
+    # 发送参数并请求色图信
     # 将色图信息转为字典
-    img_content = get(api_url, headers=headers).content
+    img_content = get(api_url).content
 
     with open(f"./temp/2.jpg", mode="wb") as f:
         f.write(img_content)

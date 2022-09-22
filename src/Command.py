@@ -1,7 +1,7 @@
 import argparse
 from json import dump
-from Roll import roll
-from Change import chag
+from commands.Roll import roll
+from commands.Change import chag
 
 # 色图函数
 def setu_config(args):
@@ -11,7 +11,7 @@ def setu_config(args):
         tag.append(s)
     default_json = {"r18": args["r18"], "num": args["num"], "tag": tag}
     print(default_json)
-    with open("config.json", mode="w") as f:
+    with open("config/config.json", mode="w") as f:
         dump(default_json, f, indent=4)
 
 

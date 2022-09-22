@@ -4,7 +4,7 @@ import time
 
 
 def fish(from_wxid):
-    with open("info.json", mode="r", encoding="utf-8") as f:
+    with open("config/info.json", mode="r", encoding="utf-8") as f:
         origin = load(f)
     point = random.randint(1, 99)
     if point <= 9:
