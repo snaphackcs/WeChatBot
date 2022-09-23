@@ -1,7 +1,5 @@
 import random
 from json import load
-import time
-
 
 def fish(from_wxid):
     with open("config/info.json", mode="r", encoding="utf-8") as f:
