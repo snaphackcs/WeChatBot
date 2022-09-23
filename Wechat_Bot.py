@@ -31,10 +31,11 @@ with open("config/name_dict.json", mode="r", encoding="utf-8") as f:
     name_dict = load(f)
 with open("config/info.json", mode="r", encoding="utf-8") as f:
     origin = load(f)
-
+with open("config/room.json", mode="r", encoding="utf-8") as f:
+    room = load(f)
 
 # 提醒群友bot已经启动
-# wechat.send_text(to_wxid="23278031443@chatroom", content="bot已启动，已更新钓鱼！ ᕕ( ᐛ )ᕗ")
+# wechat.send_text(to_wxid=room_wxid, content="bot已启动，已更新钓鱼！ ᕕ( ᐛ )ᕗ")
 
 
 @wechat.msg_register(ntchat.MT_RECV_TEXT_MSG)
@@ -45,12 +46,13 @@ def bot(wechat_instance: ntchat.WeChat, message):
     global name_dict
     global moyutime
     global lastmoyu
+    global room
     data = message["data"]
     msg = data["msg"]
     room_wxid = data["room_wxid"]
 
     # 判断是否是SnapHack群消息
-    if room_wxid == "23278031443@chatroom":
+    if room[room_wxid]:
         from_wxid = data["from_wxid"]
         # 判断是否已经建档
         if from_wxid not in origin.keys():
@@ -62,60 +64,60 @@ def bot(wechat_instance: ntchat.WeChat, message):
 
         # 签到
         if msg == "/sign":
-            wechat_instance.send_room_at_msg(to_wxid="23278031443@chatroom",
+            wechat_instance.send_room_at_msg(to_wxid=room_wxid,
                                              content=sign(from_wxid), at_list=[from_wxid])
 
         # 今日人品
         if msg == "/fortune":
             if slip(from_wxid):
                 slippath = [join(getcwd(), "img\\slip.gif").replace("\\", "/")]
-                wechat_instance.send_gif(to_wxid="23278031443@chatroom", file=slippath[0])
+                wechat_instance.send_gif(to_wxid=room_wxid, file=slippath[0])
             sleep(2)
-            wechat_instance.send_room_at_msg(to_wxid="23278031443@chatroom",
+            wechat_instance.send_room_at_msg(to_wxid=room_wxid,
                                              content=fortune(from_wxid), at_list=[from_wxid])
 
         if msg == "/time":
             timetu=[join(getcwd(), f"img\\time\\{localtime()[3]}.gif").replace("\\", "/")]
-            wechat.send_gif(to_wxid="23278031443@chatroom", file=timetu[0])
+            wechat.send_gif(to_wxid=room_wxid, file=timetu[0])
 
         # 钓鱼
         if msg == "/fish":
-            wechat_instance.send_room_at_msg(to_wxid="23278031443@chatroom",
+            wechat_instance.send_room_at_msg(to_wxid=room_wxid,
                                              content=fish(from_wxid), at_list=[from_wxid])
 
         if msg == "/flip_coin":
             if random.randint(0,1)==1:
-                wechat.send_gif(to_wxid="23278031443@chatroom", file=r"C:\WeChatBot\1.gif")
+                wechat.send_gif(to_wxid=room_wxid, file=r"C:\WeChatBot\1.gif")
             else:
-                wechat.send_gif(to_wxid="23278031443@chatroom", file=r"C:\WeChatBot\hua.gif")
+                wechat.send_gif(to_wxid=room_wxid, file=r"C:\WeChatBot\hua.gif")
 
         # 地狱笑话
         if msg == "/joke":
-            wechat_instance.send_room_at_msg(to_wxid="23278031443@chatroom", content=joke(from_wxid), at_list=[from_wxid])
+            wechat_instance.send_room_at_msg(to_wxid=room_wxid, content=joke(from_wxid), at_list=[from_wxid])
 
 
         if msg == "/二次元":
             if moyutime >= 3 and random.randint(0, 1):
-                wechat_instance.send_room_at_msg(to_wxid="23278031443@chatroom",
+                wechat_instance.send_room_at_msg(to_wxid=room_wxid,
                                                  content=f"@{name_dict[from_wxid]} 崽啊，都已经几点了",
                                                  at_list=[from_wxid])
                 sleep(1)
-                wechat_instance.send_text(to_wxid="23278031443@chatroom", content="还在玩机器人")
+                wechat_instance.send_text(to_wxid=room_wxid, content="还在玩机器人")
                 sleep(1)
-                wechat_instance.send_text(to_wxid="23278031443@chatroom", content="我该怎么说你好")
+                wechat_instance.send_text(to_wxid=room_wxid, content="我该怎么说你好")
                 sleep(1)
-                wechat_instance.send_text(to_wxid="23278031443@chatroom", content="再不爬起来写作业")
+                wechat_instance.send_text(to_wxid=room_wxid, content="再不爬起来写作业")
                 sleep(1)
-                wechat_instance.send_text(to_wxid="23278031443@chatroom", content="妈给你一拳")
+                wechat_instance.send_text(to_wxid=room_wxid, content="妈给你一拳")
                 yiquan = [join(getcwd(), f"img/kekeluo_punch.jpg").replace("\\", "/")]
-                wechat_instance.send_image(to_wxid="23278031443@chatroom", file_path=yiquan[0])
+                wechat_instance.send_image(to_wxid=room_wxid, file_path=yiquan[0])
                 moyutime = 0
             else:
                 if (time() - lastmoyu) < 300:
                     moyutime += 1
                 else:
                     moyutime = 0
-                wechat_instance.send_image(to_wxid="23278031443@chatroom", file_path=erciyuan()[0])
+                wechat_instance.send_image(to_wxid=room_wxid, file_path=erciyuan()[0])
                 lastmoyu = time()
 
         # 跑团
@@ -124,7 +126,7 @@ def bot(wechat_instance: ntchat.WeChat, message):
             print(f"python src/Command.py {msg}")
             system(f"python src/Command.py {msg}")
             with open("temp.json", mode="r", encoding="utf-8") as doc:
-                wechat_instance.send_room_at_msg(to_wxid="23278031443@chatroom",
+                wechat_instance.send_room_at_msg(to_wxid=room_wxid,
                                                  content=f"@{name_dict[from_wxid]} {load(doc)['text']} ᕕ( ᐛ )ᕗ",
                                                  at_list=[from_wxid])
         elif msg[:5] == "/chag":
@@ -137,19 +139,19 @@ def bot(wechat_instance: ntchat.WeChat, message):
 
         # 瑟瑟
         elif msg[:5] == "/setu":
-            if time() - int(origin['last_setu']) >= 7200:
+            if time() - int(origin['last_setu']) >= 7200 or room_wxid=="25408612857@chatroom":
                 msg = sub(r'[\/\\\"\<\>\|\_\%\;\']', "/", msg[5:])
                 system(f"python Command.py {msg}")
                 data = random_setu()
-                wechat_instance.send_text(to_wxid="23278031443@chatroom", content="啊哈哈哈！色图来喽！ᕕ( ᐛ )ᕗ")
+                wechat_instance.send_text(to_wxid=room_wxid, content="啊哈哈哈！色图来喽！ᕕ( ᐛ )ᕗ")
                 for img in data:
                     print(img)
-                    wechat_instance.send_image(to_wxid="23278031443@chatroom", file_path=img)
+                    wechat_instance.send_image(to_wxid=room_wxid, file_path=img)
                 origin['last_setu'] = time()
                 with open("config/info.json", mode="w") as doc:
                     dump(origin, doc, indent=4)
             else:
-                wechat_instance.send_text(to_wxid="23278031443@chatroom",
+                wechat_instance.send_text(to_wxid=room_wxid,
                                           content=f"贤者时间还有{time_convert(7200 - time() + int(origin['last_setu']))}，"
                                                   f"先休息一下啦(｀Д´)")
 
