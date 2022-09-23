@@ -1,6 +1,6 @@
 {
     "date": "20220923",
-    "last_setu": 1663894497.573013,
+    "last_setu": 1663899063.608008,
     "wxid_f42f8bssyu9312": {
         "name": "\u5f20\u6cfd\u57df",
         "score": 63,
@@ -139,8 +139,8 @@
     },
     "wxid_2pmc5p4fe8od12": {
         "name": "\u674e\u6021\u6657",
-        "score": 5,
-        "sign_or_not": false,
+        "score": 10,
+        "sign_or_not": true,
         "fortune": 0,
         "title": "",
         "sign_days": 1
