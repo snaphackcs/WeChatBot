@@ -8,7 +8,8 @@ def new_archive(from_wxid):
     # 读取账户列表
     with open("config/info.json", mode="r", encoding="utf-8") as f:
         origin = load(f)
-
+    with open("config/bao.json",mode="r",encoding="utf-8") as f:
+        bao=load(f)
     # 建档
     if from_wxid not in origin.keys():
         if from_wxid not in name_dict.keys():
@@ -24,6 +25,28 @@ def new_archive(from_wxid):
             "title": "",
             "sign_days": 1
         }}
+        new_inven_json={from_wxid: {
+            "fish1": 0,
+            "fish2": 0,
+            "nvzhuang": 0,
+            "shezhang": 0,
+            "qilunuo": 0,
+            "pink_flower": 6,
+            "blue_flower": 6,
+            "wine": 0,
+            "tea": 0,
+            "panc": 0,
+            "cake": 0,
+            "apple": 0,
+            "ch_cake": 0,
+            "french": 0,
+            "pding": 0,
+            "parfait": 0,
+            "waffle": 0
+        }}
         origin.update(new_info_json)
-        with open("info.json", mode="w") as f:
+        bao.update(new_inven_json)
+        with open("config/info.json", mode="w") as f:
+            dump(origin, f, indent=4)
+        with open("config/bao.json", mode="w") as f:
             dump(origin, f, indent=4)

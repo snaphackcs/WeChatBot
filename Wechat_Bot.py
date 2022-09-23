@@ -35,8 +35,8 @@ with open("config/room.json", mode="r", encoding="utf-8") as f:
     room = load(f)
 with open("config/bao.json", mode="r", encoding="utf-8") as f:
     bao = load(f)
-with open("temp.json", mode="w") as f:
-    tp = load(f)
+with open("config/wuping.json", mode="r", encoding="utf-8") as f:
+    wuping = load(f)
 # 提醒群友bot已经启动
 # wechat.send_text(to_wxid=room_wxid, content="bot已启动，已更新钓鱼！ ᕕ( ᐛ )ᕗ")
 
@@ -50,7 +50,8 @@ def bot(wechat_instance: ntchat.WeChat, message):
     global moyutime
     global lastmoyu
     global room
-    global tp
+    global bao
+    global wuping
     data = message["data"]
     msg = data["msg"]
     room_wxid = data["room_wxid"]
@@ -94,12 +95,15 @@ def bot(wechat_instance: ntchat.WeChat, message):
                 wechat.send_gif(to_wxid=room_wxid, file=r"C:\WeChatBot\1.gif")
             else:
                 wechat.send_gif(to_wxid=room_wxid, file=r"C:\WeChatBot\hua.gif")
+
         if msg == "/b":
-            item=""
-            for itemt in range(bao[from_wxid]):
+            item = "@ you have"
+            for itemt in (bao[from_wxid]):
                 if bao[from_wxid][itemt]!=0:
-                    item+=(f"{itemt}:{bao[from_wxid][itemt]}个")
-                    item+=(r"\n")
+                    item += ("\n")
+                    item += (f"{wuping[itemt]}:{bao[from_wxid][itemt]}个")
+
+
             wechat_instance.send_room_at_msg(to_wxid=room_wxid,
                                              content=item, at_list=[from_wxid])
 
