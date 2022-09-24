@@ -29,9 +29,9 @@ def fish(from_wxid):
     elif point <= 99:
         if random.randint(0,1):
 
-            return f"@origin[from_wxid]['title']}{origin[from_wxid]['name']} 你钓上来一个奇怪的小罐子"
+            return f"@{origin[from_wxid]['title']}{origin[from_wxid]['name']} 你钓上来一个奇怪的小罐子"
 
-        return f"@origin[from_wxid]['title']}{origin[from_wxid]['name']} 你钓上来一个奇怪的小罐子"
+        return f"@{origin[from_wxid]['title']}{origin[from_wxid]['name']} 你钓上来一个奇怪的小罐子"
     elif point <= 99:
         return f"@{origin[from_wxid]['title']}{origin[from_wxid]['name']} 你调上来了一只韬哥。韬哥向你展示了3张色图，她问你：”你掉的是这个毛玉牛乳老师画的色图，还是这个MANA老师画的色图，还是这个普通的骑兵色图。“你回答：”小孩才选择，大人全都要“。韬哥非常生气，收走了3张色图，抛给你了一个视频，就再也不见了（视频：https://www.bilibili.com/video/BV1vu411R7hs）史称韬哥止导。"
 if __name__ == '__main__':
