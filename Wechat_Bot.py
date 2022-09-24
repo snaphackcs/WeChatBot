@@ -1,4 +1,4 @@
-﻿import sys
+import sys
 import time
 import ntchat
 from os.path import join
@@ -13,6 +13,8 @@ from Setu import random_setu, time_convert
 from Fish import fish
 from meitu import erciyuan
 from Joke import joke
+from love import love
+from love import bixin
 import random
 # 创建微信
 wechat = ntchat.WeChat()
@@ -136,6 +138,22 @@ def bot(wechat_instance: ntchat.WeChat, message):
 
         elif from_wxid=="wxid_ssyd5nc3hbcp12" and msg[:1] == "/":
                 wechat_instance.send_text(to_wxid="23278031443@chatroom", content=msg)
+
+        #love
+        elif msg[:5] == "/love":
+            love(wechat_instance, message)
+
+
+        elif room_wxid == "23278031443@chatroom" and "@周子勋\u2005" in msg:
+            if msg == "@周子勋\u2005笔芯":
+                bixin(wechat_instance, message)
+
+
+
+
+
+
+
 
 
 
