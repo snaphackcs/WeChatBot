@@ -14,6 +14,7 @@ from conf.Fish import fish
 from conf.meitu import erciyuan
 from conf.Joke import joke
 from conf.feed import touwei
+from test import test1
 import random
 # 创建微信
 wechat = ntchat.WeChat()
@@ -34,8 +35,7 @@ with open("config/info.json", mode="r", encoding="utf-8") as f:
     origin = load(f)
 with open("config/room.json", mode="r", encoding="utf-8") as f:
     room = load(f)
-with open("config/bao.json", mode="r", encoding="utf-8") as f:
-    bao = load(f)
+
 with open("config/wuping.json", mode="r", encoding="utf-8") as f:
     wuping = load(f)
 # 提醒群友bot已经启动
@@ -51,7 +51,6 @@ def bot(wechat_instance: ntchat.WeChat, message):
     global moyutime
     global lastmoyu
     global room
-    global bao
     global wuping
     data = message["data"]
     msg = data["msg"]
@@ -98,6 +97,8 @@ def bot(wechat_instance: ntchat.WeChat, message):
                 wechat.send_gif(to_wxid=room_wxid, file=r"C:\WeChatBot\hua.gif")
 
         if msg == "/b":
+            with open("config/bao.json", mode="r", encoding="utf-8") as f:
+                bao = load(f)
             item = "@ you have"
             for itemt in (bao[from_wxid]):
                 if bao[from_wxid][itemt]!=0:
@@ -106,13 +107,13 @@ def bot(wechat_instance: ntchat.WeChat, message):
             wechat_instance.send_room_at_msg(to_wxid=room_wxid,
                                              content=item, at_list=[from_wxid])
 
-        elif msg[:5] == "/投喂":
+        elif msg[:3] == "/投喂":
             if msg=="/投喂":
                 wechat_instance.send_room_at_msg(to_wxid=room_wxid,
                                                  content=f"@{name_dict[from_wxid]} 要给bot酱投喂什么呢",
                                                  at_list=[from_wxid])
             else:
-                touwei(msg,from_wxid,room_wxid)
+                touwei(wechat_instance,msg,from_wxid,room_wxid)
 
 
 

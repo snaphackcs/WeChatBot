@@ -50,4 +50,4 @@ def new_archive(from_wxid):
         with open("config/info.json", mode="w") as f:
             dump(origin, f, indent=4)
         with open("config/bao.json", mode="w") as f:
-            dump(origin, f, indent=4)
+            dump(bao, f, indent=4)
