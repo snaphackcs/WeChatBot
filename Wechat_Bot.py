@@ -13,6 +13,7 @@ from commands.Setu import random_setu, time_convert
 from conf.Fish import fish
 from conf.meitu import erciyuan
 from conf.Joke import joke
+from conf.feed import touwei
 import random
 # 创建微信
 wechat = ntchat.WeChat()
@@ -102,10 +103,17 @@ def bot(wechat_instance: ntchat.WeChat, message):
                 if bao[from_wxid][itemt]!=0:
                     item += ("\n")
                     item += (f"{wuping[itemt]}:{bao[from_wxid][itemt]}个")
-
-
             wechat_instance.send_room_at_msg(to_wxid=room_wxid,
                                              content=item, at_list=[from_wxid])
+
+        elif msg[:5] == "/投喂":
+            if msg=="/投喂":
+                wechat_instance.send_room_at_msg(to_wxid=room_wxid,
+                                                 content=f"@{name_dict[from_wxid]} 要给bot酱投喂什么呢",
+                                                 at_list=[from_wxid])
+            else:
+                touwei(msg,from_wxid,room_wxid)
+
 
 
 
@@ -137,6 +145,10 @@ def bot(wechat_instance: ntchat.WeChat, message):
                     moyutime = 0
                 wechat_instance.send_image(to_wxid=room_wxid, file_path=erciyuan()[0])
                 lastmoyu = time()
+
+
+
+
 
         # 跑团
         elif msg[:5] == "/roll":

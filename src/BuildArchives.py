@@ -26,13 +26,14 @@ def new_archive(from_wxid):
             "sign_days": 1
         }}
         new_inven_json={from_wxid: {
+            "favor":0,
             "fish1": 0,
             "fish2": 0,
             "nvzhuang": 0,
             "shezhang": 0,
             "qilunuo": 0,
-            "pink_flower": 6,
-            "blue_flower": 6,
+            "pink_flower": 0,
+            "blue_flower": 0,
             "wine": 0,
             "tea": 0,
             "panc": 0,
