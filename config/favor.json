@@ -1,0 +1,82 @@
+{
+    "wine": {
+        "0": "textw1",
+        "20": "textw2",
+        "40": "textw4",
+        "60": "textw6",
+        "80": "textw8",
+        "100": "textw10"
+    },
+    "tea": {
+        "0": "textt1",
+        "20": "textt2",
+        "40": "textt4",
+        "60": "textt6",
+        "80": "textt8",
+        "100": "textt10"
+    },
+    "panc": {
+        "0": "textp1",
+        "20": "textp2",
+        "40": "textp4",
+        "60": "textp6",
+        "80": "textp8",
+        "100": "textp10"
+    },
+    "cake": {
+        "0": "textc1",
+        "20": "textc2",
+        "40": "textc4",
+        "60": "textc6",
+        "80": "textc8",
+        "100": "textc10"
+    },
+    "apple": {
+        "0": "texta1",
+        "20": "texta2",
+        "40": "texta4",
+        "60": "texta6",
+        "80": "texta8",
+        "100": "texta10"
+    },
+    "ch_cake": {
+        "0": "textch1",
+        "20": "textch2",
+        "40": "textch4",
+        "60": "textch6",
+        "80": "textch8",
+        "100": "textch10"
+    },
+    "french": {
+        "0": "textf1",
+        "20": "textf2",
+        "40": "textf4",
+        "60": "textf6",
+        "80": "textf8",
+        "100": "textf10"
+    },
+    "pding": {
+        "0": "textp1",
+        "20": "textp2",
+        "40": "textp4",
+        "60": "textp6",
+        "80": "textp8",
+        "100": "textp10"
+    },
+    "parfait": {
+        "0": "textpf1",
+        "20": "textpf2",
+        "40": "textpf4",
+        "60": "textpf6",
+        "80": "textpf8",
+        "100": "textpf10"
+    },
+    "waffle": {
+        "0": "textw1",
+        "20": "textw2",
+        "40": "textw4",
+        "60": "textw6",
+        "80": "textw8",
+        "100": "textw10"
+    }
+}
