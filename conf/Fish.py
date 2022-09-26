@@ -1,4 +1,4 @@
-import random
+﻿import random
 from json import load,dump
 
 def fish(from_wxid):
@@ -10,7 +10,7 @@ def fish(from_wxid):
     if point <= 40:
         return f"@{origin[from_wxid]['title']}{origin[from_wxid]['name']} 你钓上来了个垃圾。"
     elif point <= 50:
-        bao[from_wxid]["fish1"] = 2
+        bao[from_wxid]["fish1"] += 1
         with open("config/bao.json", mode="w") as r:
             dump(bao, r, indent=4)
         return f"@{origin[from_wxid]['title']}{origin[from_wxid]['name']} 你钓上了一只鲈鱼，也许可以做成吃的？（等待之后物品仓库更新就能加入到物品仓库中了）"
